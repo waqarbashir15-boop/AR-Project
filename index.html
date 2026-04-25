@@ -1,25 +1,28 @@
-```html
+```html id="fixfullar"
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>AR Project</title>
 
-  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-
-  <!-- AR.js -->
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
 </head>
 
-<body style="margin: 0; overflow: hidden;">
-  
-  <a-scene embedded arjs>
+<body>
 
-    <!-- Marker (Hiro - easiest) -->
+  <!-- ❗ embedded REMOVE kar diya -->
+  <a-scene
+    vr-mode-ui="enabled: false"
+    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+
+    <!-- Hiro Marker -->
     <a-marker preset="hiro">
 
-      <!-- 3D Model -->
       <a-entity 
         gltf-model="model.glb"
         scale="0.5 0.5 0.5"
@@ -28,7 +31,6 @@
 
     </a-marker>
 
-    <!-- Camera -->
     <a-entity camera></a-entity>
 
   </a-scene>
